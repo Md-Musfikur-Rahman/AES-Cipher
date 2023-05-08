@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/AES-Cipher/static/js/main.f79e026e.js",
+    "main.js": "/AES-Cipher/static/js/main.fc1f9ea9.js",
     "index.html": "/AES-Cipher/index.html",
-    "main.f79e026e.js.map": "/AES-Cipher/static/js/main.f79e026e.js.map"
+    "main.fc1f9ea9.js.map": "/AES-Cipher/static/js/main.fc1f9ea9.js.map"
   },
   "entrypoints": [
-    "static/js/main.f79e026e.js"
+    "static/js/main.fc1f9ea9.js"
   ]
 }
