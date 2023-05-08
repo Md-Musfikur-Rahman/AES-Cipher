@@ -56,7 +56,7 @@ export default function Decryption() {
   };
 
   return (
-    <Box width="50%" m="auto">
+    <Box m="auto">
       <Stack gap={2} alignItems="left">
         <TextField
           label="Ciphertext"
@@ -72,7 +72,7 @@ export default function Decryption() {
           variant="outlined"
           margin="normal"
         />
-          {showKeyLengthPopup && (
+        {showKeyLengthPopup && (
           <Typography variant="body2" color="error">
             The key size should be 16 characters long.
           </Typography>
@@ -107,17 +107,17 @@ export default function Decryption() {
           )}
         </Stack>
         {showCopySuccess ? (
-  <Typography variant="subtitle1" align="center" color="success" p={2}>
-    Text copied successfully!
-  </Typography>        
-): null }
+          <Typography variant="subtitle1" align="center" color="success" p={2}>
+            Text copied successfully!
+          </Typography>
+        ) : null}
       </Stack>
 
       <Stack my={3} alignItems="center" sx={{ width: "100%" }}>
         <Button
           variant="outlined"
           onClick={handleClearClick}
-          sx={{ width: "70%" }}
+          sx={{ width: "25%" }}
         >
           Clear
         </Button>

@@ -1,6 +1,13 @@
 import React, { useState } from "react";
 import CopyIcon from "@mui/icons-material/FileCopy";
-import { Box, Stack, TextField, Button, Typography, IconButton } from "@mui/material";
+import {
+  Box,
+  Stack,
+  TextField,
+  Button,
+  Typography,
+  IconButton,
+} from "@mui/material";
 import CryptoJS from "crypto-js";
 
 export default function Encryption() {
@@ -40,7 +47,6 @@ export default function Encryption() {
     navigator.clipboard.writeText(ciphertext);
     setShowCopySuccess(true);
   };
-  
 
   const handleClearClick = () => {
     setPlaintext("");
@@ -50,7 +56,7 @@ export default function Encryption() {
   };
 
   return (
-    <Box width="50%" m="auto">
+    <Box m="auto">
       <Stack gap={2} alignItems="left">
         <TextField
           label="Plaintext"
@@ -66,7 +72,7 @@ export default function Encryption() {
           variant="outlined"
           margin="normal"
         />
-          {showKeyLengthPopup && (
+        {showKeyLengthPopup && (
           <Typography variant="body2" color="error">
             The key size should be 16 characters long.
           </Typography>
@@ -101,18 +107,17 @@ export default function Encryption() {
           )}
         </Stack>
         {showCopySuccess ? (
-  <Typography variant="subtitle1" align="center" color="success" p={2}>
-    Text copied successfully!
-  </Typography>        
-): null }
-
+          <Typography variant="subtitle1" align="center" color="success" p={2}>
+            Text copied successfully!
+          </Typography>
+        ) : null}
       </Stack>
 
       <Stack my={3} alignItems="center" sx={{ width: "100%" }}>
         <Button
           variant="outlined"
           onClick={handleClearClick}
-          sx={{ width: "70%" }}
+          sx={{ width: "25%" }}
         >
           Clear
         </Button>
