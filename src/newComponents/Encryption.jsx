@@ -41,6 +41,7 @@ export default function Encryption() {
       keySize: keySize / 8,
     }).toString();
     setCiphertext(encrypted);
+    //key expantion
   };
 
   const handleCopyClick = () => {

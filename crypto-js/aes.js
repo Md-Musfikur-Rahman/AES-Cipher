@@ -16,7 +16,6 @@
   var INV_SUB_MIX_1 = [];
   var INV_SUB_MIX_2 = [];
   var INV_SUB_MIX_3 = [];
-
   // Compute lookup tables
   (function () {
     // Compute double table
