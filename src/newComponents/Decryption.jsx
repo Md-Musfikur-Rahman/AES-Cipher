@@ -69,14 +69,12 @@ export default function Decryption() {
           label="Key"
           value={key}
           onChange={handleKeyChange}
+          error={showKeyLengthPopup}
+          helperText={showKeyLengthPopup ? "Key must be 16 characters" : ""}
           variant="outlined"
           margin="normal"
         />
-        {showKeyLengthPopup && (
-          <Typography variant="body2" color="error">
-            The key size should be 16 characters long.
-          </Typography>
-        )}
+
         <Button
           sx={{
             m: "auto",
@@ -92,25 +90,30 @@ export default function Decryption() {
         <Typography variant="h5" sx={{ fontWeight: "bold" }}>
           Decrypted Text:
         </Typography>
-        <Stack direction="row" alignItems="center">
-          <TextField
-            label="Plaintext"
-            value={decryptedText}
-            variant="outlined"
-            margin="normal"
-            sx={{ fontSize: "1.2rem", flexGrow: 1 }}
-          />
-          {decryptedText && (
-            <IconButton aria-label="copy" onClick={handleCopyClick}>
+        <TextField
+          label="Plaintext"
+          value={decryptedText}
+          variant="outlined"
+          margin="normal"
+          disabled
+          multiline
+          rows={4}
+        />
+        {decryptedText && (
+          <Box display="flex" alignItems="center">
+            <Typography variant="body1" mr={1}>
+              Click the button to copy ciphertext:
+            </Typography>
+            <IconButton onClick={handleCopyClick} color="primary">
               <CopyIcon />
             </IconButton>
-          )}
-        </Stack>
-        {showCopySuccess ? (
-          <Typography variant="subtitle1" align="center" color="success" p={2}>
-            Text copied successfully!
-          </Typography>
-        ) : null}
+            {showCopySuccess && (
+              <Typography variant="body2" color="primary">
+                Copied to clipboard!
+              </Typography>
+            )}
+          </Box>
+        )}
       </Stack>
 
       <Stack my={3} alignItems="center" sx={{ width: "100%" }}>
